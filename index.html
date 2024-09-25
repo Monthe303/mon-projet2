@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord du Québec & du Canada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .flags-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #e9e9e9;
+        }
+
+        .flags-container img {
+            width: 200px;
+            height: auto;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+        }
+
+        .form-container {
+            width: 40%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tableau de Bord - Québec & Canada</h1>
+    </header>
+
+    <!-- Affichage des drapeaux -->
+    <div class="flags-container">
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Flag_of_Quebec.svg/1024px-Flag_of_Quebec.svg.png"
+                alt="Drapeau du Québec">
+        </div>
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/en/c/cf/Flag_of_Canada.svg" alt="Drapeau du Canada">
+        </div>
+    </div>
+
+    <!-- Tableau de bord avec les formulaires -->
+    <div class="dashboard">
+        <!-- Formulaire de déclaration d'intérêt d'Arrima (Québec) -->
+        <div class="form-container">
+            <h2>Déclaration d'Intérêt - Arrima Québec</h2>
+            <form id="arrimaForm">
+                <label for="nom">Nom et prenomComplet</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="programme">Choisissez un programme</label>
+                <select id="programme" name="programme" required>
+                    <option value="travailleur_qualifie">Travailleur Qualifié</option>
+                    <option value="etudiant_international">Étudiant International</option>
+                </select>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Soumettre</button>
+            </form>
+        </div>
+
+        <!-- Formulaire de demande de résidence permanente (Entrée Express) -->
+        <div class="form-container">
+            <h2>Demande de Résidence Permanente - Entrée Express</h2>
+            <form id="expressEntryForm">
+                <label for="nom">Nom Complet</label>
+                <input type="text" id="nom2" name="nom" required>
+
+                <label for="email">Adresse Email</label>
+                <input type="email" id="email2" name="email" required>
+
+                <label for="categorie">Choisissez une catégorie</label>
+                <select id="categorie" name="categorie" required>
+                    <option value="travailleur_qualifie_federal">Travailleur Qualifié Fédéral</option>
+                    <option value="experience_canadienne">Expérience Canadienne</option>
+                </select>
+
+                <label for="message">Entrer un message</label>
+                <textarea id="message2" name="message" rows="4"></textarea>
+
+                <button type="submit">Soumettre</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Gestion des formulaires (simple alert lors de la soumission)
+        document.getElementById("arrimaForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Votre déclaration d'intérêt pour Arrima a été soumise avec succès !");
+        });
+
+        document.getElementById("expressEntryForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Votre demande de résidence permanente pour Entrée Express a été soumise avec succès !");
+        });
+    </script>
+
+</body>
+
+</html>
